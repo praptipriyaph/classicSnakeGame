@@ -1,0 +1,154 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f2ea;
+  --panel: #ffffff;
+  --border: #c9c1b4;
+  --text: #201f1b;
+  --snake: #2f7a4b;
+  --snake-head: #1f4f33;
+  --food: #b83a2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  background: radial-gradient(circle at top, #fff, var(--bg));
+  color: var(--text);
+}
+
+.app {
+  max-width: 720px;
+  margin: 24px auto 48px;
+  padding: 0 16px;
+  display: grid;
+  gap: 20px;
+}
+
+.hud {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+}
+
+.title {
+  font-size: 20px;
+  letter-spacing: 0.4px;
+}
+
+.score {
+  font-variant-numeric: tabular-nums;
+}
+
+.board {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 2px;
+  width: min(80vmin, 520px);
+  height: min(80vmin, 520px);
+  margin: 0 auto;
+}
+
+.cell {
+  background: #ece5d9;
+  border-radius: 2px;
+  aspect-ratio: 1 / 1;
+}
+
+.cell.snake {
+  background: var(--snake);
+}
+
+.cell.snake.head {
+  background: var(--snake-head);
+}
+
+.cell.food {
+  background: var(--food);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.overlay.show {
+  display: flex;
+}
+
+.overlay-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  text-align: center;
+  display: grid;
+  gap: 12px;
+}
+
+.controls {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #f2ece2;
+  padding: 8px 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.dpad {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+
+.dpad-row {
+  display: flex;
+  gap: 8px;
+}
+
+.help {
+  margin: 0;
+  font-size: 14px;
+  color: #4e4a42;
+}
+
+@media (min-width: 700px) {
+  .dpad {
+    display: none;
+  }
+}

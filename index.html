@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div class="title">Classic Snake</div>
+        <div class="score">Score: <span id="score">0</span></div>
+      </header>
+
+      <section class="board" aria-label="Snake game board">
+        <div id="grid" class="grid" role="grid" aria-live="polite"></div>
+        <div id="overlay" class="overlay" aria-hidden="true">
+          <div class="overlay-card">
+            <div id="overlay-text" class="overlay-text">Game Over</div>
+            <button id="restart-overlay" class="btn">Restart</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <div class="buttons">
+          <button id="pause" class="btn">Pause</button>
+          <button id="restart" class="btn">Restart</button>
+        </div>
+        <div class="dpad" aria-label="On-screen controls">
+          <button class="btn dpad-btn" data-dir="up">Up</button>
+          <div class="dpad-row">
+            <button class="btn dpad-btn" data-dir="left">Left</button>
+            <button class="btn dpad-btn" data-dir="down">Down</button>
+            <button class="btn dpad-btn" data-dir="right">Right</button>
+          </div>
+        </div>
+        <p class="help">Use arrow keys or WASD. Space toggles pause.</p>
+      </section>
+    </main>
+
+    <script src="snake.js"></script>
+  </body>
+</html>
